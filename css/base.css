@@ -1,0 +1,161 @@
+*,
+::before,
+::after{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    /*清除移动端设备默认的点击高亮效果*/
+    -webkit-tap-highlight-color: transparent;
+}
+
+body{
+    font-family: "Microsoft Yahei" sans-serif;
+    font-size: 12px;
+    color: #000;
+}
+
+input,textarea{
+    outline: none;
+    /*点击有效果*/
+    border: none;
+    /*去除iOS默认的一些非扁平化控件效果*/
+    -webkit-appearance: none;
+}
+
+a{
+    text-decoration: none;
+    color: #666;
+}
+
+ol, ul{
+    list-style: none;
+}
+ul li a{
+    display: block;
+}
+
+
+.clearfix::before,
+.clearfix::after{
+    content: "";
+    display: block;
+    height: 0;
+    /*去浮动*/
+    clear: both;
+    /*隐藏内容,但是保留位置*/
+    visibility: hidden;
+}
+/* 类名前面包含xx */
+[class ^= "icon_"]{
+
+    background: url("../images/sprites.png") no-repeat;
+    -webkit-background-size: 200px 200px;
+    background-size: 200px 200px;
+}
+
+/* 细边框 */
+.lightborder{
+    position: relative;
+}
+.lightborder::after{
+    content: "";
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    width: 200%;
+    height: 200%;
+
+    border: 1px solid #e0e0e0;
+
+    -webkit-transform: scale(0.5, 0.5);
+    transform: scale(0.5, 0.5);
+    -webkit-transform-origin:left top;
+    transform-origin:left top;
+}
+
+
+/* 顶部 */
+.jd_base_header{
+    width: 100%;
+
+}
+.jd_base_header .topbar{
+    width: 100%;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    background: url("../images/header-bg.png") repeat-x;
+    border-bottom: 1px solid #e0e0e0;
+
+    position: relative;
+}
+
+
+
+
+.topbar span.title{
+    font-size: 16px;
+}
+
+.topbar form{
+    width: 100%;
+    height: 44px;
+    line-height: 44px;
+    padding-left: 40px;
+    padding-right: 50px;
+    /*background: #000;*/
+}
+.topbar form .icon_search{
+    position: absolute;
+    left: 50px;
+    top: 12px;
+
+    background-position: -60px -109px;
+    width: 20px;
+    height: 20px;
+}
+.topbar form input{
+    width: 100%;
+    height: 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    margin-top: 7px;
+    padding: 0 50px;
+
+}
+
+.jd_base_header .shortcut{
+    width: 100%;
+    height: 57px;
+    background: #404042;
+    display: table;
+}
+.shortcut li{
+    display: table-cell;
+    width: 25%;
+    height: 100%;
+    text-align: center;
+}
+.shortcut li.current{
+    background: #2d2d2d;
+}
+
+.shortcut li a{
+    width: 100%;
+    height: 100%;
+}
+.shortcut li a strong{
+    color: #fff;
+    /*font-size: 13px;*/
+    font-weight: normal;
+}
+
+.shortcut li a span{
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+
